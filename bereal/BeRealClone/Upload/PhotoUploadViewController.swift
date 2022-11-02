@@ -34,13 +34,16 @@ class PhotoUploadViewController: UIViewController,
   }
   
   @IBAction func postPhotoButtonTapped(_ sender: UIButton) {
-    guard let photoImageChosen = self.photoImageChosen else { return }
-    let post = PFObject(className: "Post")
+    guard let photoImageChosen = self.photoImageChosen,
+          let user = PFUser.current() else { return }
+    
+    user["lastPostedDate"] = NSDate().timeIntervalSince1970
     let imageFileObject = PFFileObject(name: "photo.jpg",
                                        data: photoImageChosen.jpegData(compressionQuality: 0.1)!)
+    let post = PFObject(className: "Post")
     post["image"] = imageFileObject
     post["caption"] = captionTextField.text
-    post["user"] = PFUser.current()
+    post["user"] = user
     post.saveInBackground { [unowned self] isSuccess, error in
       guard isSuccess else {
         print("not successful")
