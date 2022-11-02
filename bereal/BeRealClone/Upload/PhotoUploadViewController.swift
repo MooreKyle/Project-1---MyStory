@@ -9,27 +9,24 @@ import UIKit
 import PhotosUI
 import Parse
 
-class PhotoUploadViewController: UIViewController, PHPickerViewControllerDelegate {
+class PhotoUploadViewController: UIViewController,
+                                 PHPickerViewControllerDelegate,
+                                 UIImagePickerControllerDelegate & UINavigationControllerDelegate {
   
-  @IBOutlet weak var selectPhotoButton: UIButton!
-  @IBOutlet weak var photoImageView: UIImageView!
-  @IBOutlet weak var captionTextField: UITextField!
-  @IBOutlet weak var postButton: UIButton!
+  @IBOutlet private weak var selectPhotoButton: UIButton!
+  @IBOutlet private weak var photoImageView: UIImageView!
+  @IBOutlet private weak var captionTextField: UITextField!
   private var photoImageChosen: UIImage?
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    navigationItem.leftBarButtonItem?.title = ""
-  }
+  // MARK: IBActions
   
   @IBAction func selectPhotoButtonTapped(_ sender: UIButton) {
-    var config = PHPickerConfiguration()
-    config.filter = .images
-    config.selectionLimit = 1
-    config.preferredAssetRepresentationMode = .current
-    let controller = PHPickerViewController(configuration: config)
-    controller.delegate = self
-    present(controller, animated: true)
+    let isPart1OfProject = false
+    if isPart1OfProject {
+      openPhotoPicker()
+    } else {
+      openCamera()
+    }
   }
   
   @IBAction func postPhotoButtonTapped(_ sender: UIButton) {
@@ -49,6 +46,35 @@ class PhotoUploadViewController: UIViewController, PHPickerViewControllerDelegat
     }
   }
   
+  // MARK: Private Methods
+  
+  private func openCamera() {
+    if(UIImagePickerController.isSourceTypeAvailable(.camera)) {
+      let imagePicker =  UIImagePickerController()
+      imagePicker.delegate = self
+      imagePicker.sourceType = .camera
+      self.present(imagePicker, animated: true, completion: nil)
+    } else {
+      let alert  = UIAlertController(title: "Warning",
+                                     message: "You don't have camera",
+                                     preferredStyle: .alert)
+      alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+      self.present(alert, animated: true, completion: nil)
+    }
+  }
+  
+  private func openPhotoPicker() {
+    var config = PHPickerConfiguration()
+    config.filter = .images
+    config.selectionLimit = 1
+    config.preferredAssetRepresentationMode = .current
+    let controller = PHPickerViewController(configuration: config)
+    controller.delegate = self
+    present(controller, animated: true)
+  }
+  
+  // MARK: PHPickerViewControllerDelegate
+  
   func picker(_ picker: PHPickerViewController,
               didFinishPicking results: [PHPickerResult]) {
     picker.dismiss(animated: true)
@@ -64,5 +90,15 @@ class PhotoUploadViewController: UIViewController, PHPickerViewControllerDelegat
         self.photoImageView.image = image
       }
     }
+  }
+  
+  // MARK: UIImagePickerControllerDelegate
+  
+  func imagePickerController(_ picker: UIImagePickerController,
+                             didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    guard let imageChosen = info[.originalImage] as? UIImage else { return }
+    photoImageChosen = imageChosen
+    photoImageView.image = imageChosen
+    picker.dismiss(animated: true)
   }
 }

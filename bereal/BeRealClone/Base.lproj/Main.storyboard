@@ -109,20 +109,20 @@
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SelfSectionCell" id="C8c-n0-kz4">
-                                        <rect key="frame" x="0.0" y="50" width="390" height="50.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="390" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="C8c-n0-kz4" id="E7b-xa-DXB">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="50.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90O-M1-mvM">
-                                                    <rect key="frame" x="133" y="8" width="124.33333333333331" height="34.666666666666664"/>
+                                                    <rect key="frame" x="133" y="8" width="124.33333333333331" height="35"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="filled" title="Post a Photo">
                                                         <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
                                                     </buttonConfiguration>
                                                     <connections>
-                                                        <segue destination="O4k-I6-kXF" kind="show" id="TUu-Fr-mrb"/>
+                                                        <segue destination="O4k-I6-kXF" kind="show" identifier="" id="TUu-Fr-mrb"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -138,7 +138,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCellTableViewCell" rowHeight="424" id="zIU-Sb-5gC" customClass="PostCellTableViewCell" customModule="BeRealClone" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="100.66666793823242" width="390" height="424"/>
+                                        <rect key="frame" x="0.0" y="101" width="390" height="424"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zIU-Sb-5gC" id="KQb-7X-a6A">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="424"/>
@@ -238,7 +238,7 @@
                     <navigationItem key="navigationItem" title="BeReal." id="i7j-Lx-9Lu">
                         <barButtonItem key="backBarButtonItem" title=" " id="0Qe-nP-8Br"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="Hbo-te-xYa">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="J2L-d4-bx3">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="J2L-d4-bx3">
                                 <rect key="frame" x="288" y="5" width="86" height="34.333333333333336"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
@@ -331,7 +331,7 @@
                     <navigationItem key="navigationItem" title="Post Photo" id="g7z-R0-RTZ">
                         <barButtonItem key="backBarButtonItem" title="Back" id="5yf-85-O57"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="S5o-Pl-xBe">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="1Yb-fc-EAh">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="1Yb-fc-EAh">
                                 <rect key="frame" x="288" y="5" width="86" height="34.333333333333336"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
