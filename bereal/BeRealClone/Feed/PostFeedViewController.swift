@@ -27,6 +27,8 @@ class PostFeedViewController: UIViewController,
     }
   }
   
+  // MARK: Lifecycle Methods
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -48,6 +50,8 @@ class PostFeedViewController: UIViewController,
     refreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
     queryPosts()
   }
+  
+  // MARK: Table View Methods
   
   func numberOfSections(in tableView: UITableView) -> Int {
     return 2
@@ -73,15 +77,19 @@ class PostFeedViewController: UIViewController,
     }
   }
   
+  // MARK: IBActions
+  
+  @IBAction func didTapLogoutButton(_ sender: UIButton) {
+    NotificationCenter.default.post(name: NSNotification.Name("logout"), object: nil)
+  }
+  
+  // MARK: Private Methods
+  
   @objc private func didPullToRefresh() {
     refreshControl.beginRefreshing()
     queryPosts { [unowned self] in
       self.refreshControl.endRefreshing()
     }
-  }
-  
-  @IBAction func didTapLogoutButton(_ sender: UIButton) {
-    NotificationCenter.default.post(name: NSNotification.Name("logout"), object: nil)
   }
   
   private func createSelfSectionCell(_ tableView: UITableView, _ indexPath: IndexPath) -> UITableViewCell {
@@ -100,8 +108,13 @@ class PostFeedViewController: UIViewController,
   
   private func queryPosts(completion: (() -> Void)? = nil) {
     let query = PFQuery(className: "Post")
+    let yesterday = Calendar.current.date(byAdding: .day,
+                                          value: -1,
+                                          to: Date())!
+    query.whereKey("createdAt", greaterThanOrEqualTo: yesterday)
     query.includeKey("user")
     query.addDescendingOrder("createdAt")
+    query.limit = 10
     query.findObjectsInBackground { [unowned self] posts, error in
       if let error = error {
         print("Error in fetching messages: \(error.localizedDescription)")

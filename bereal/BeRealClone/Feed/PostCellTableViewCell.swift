@@ -8,6 +8,14 @@
 import UIKit
 import Parse
 
+extension Date {
+  func hours(from date: Date) -> Int {
+      return Calendar.current.dateComponents([.hour],
+                                             from: date,
+                                             to: self).hour ?? 0
+  }
+}
+
 class PostCellTableViewCell: UITableViewCell {
   
   static let identifier = "PostCellTableViewCell"
@@ -35,13 +43,9 @@ class PostCellTableViewCell: UITableViewCell {
   // MARK: Private Methods
   
   private func updateBlurView() {
-    let loggedInUser = PFUser.current()!
-    let postDateComponents = Calendar.current.dateComponents([.day],
-                                                             from: postObject!.createdAt!)
-    
-    if let lastPostedDate = loggedInUser["lastPostedDate"] as? Date {
-      let lastPostedDateComponents = Calendar.current.dateComponents([.day], from: lastPostedDate)
-      blurView.isHidden = lastPostedDateComponents.day == postDateComponents.day
+    if let loggedInUserLastPostedDate = PFUser.current()!["lastPostedDate"] as? Date {
+      let numHoursDifference = postObject!.createdAt!.hours(from: loggedInUserLastPostedDate)
+      blurView.isHidden = abs(numHoursDifference) < 24
     } else {
       blurView.isHidden = false
     }
@@ -82,8 +86,8 @@ class PostCellTableViewCell: UITableViewCell {
   
   override func prepareForReuse() {
     super.prepareForReuse()
-    postObject = nil
     imageFileObject?.cancel()
+    postObject = nil
     photoImageView.image = nil
     captionLabel.text = ""
     authorLabel.text = ""
