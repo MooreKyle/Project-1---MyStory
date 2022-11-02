@@ -37,7 +37,7 @@ class PhotoUploadViewController: UIViewController,
     guard let photoImageChosen = self.photoImageChosen,
           let user = PFUser.current() else { return }
     
-    user["lastPostedDate"] = NSDate().timeIntervalSince1970
+    user["lastPostedDate"] = NSDate()
     let imageFileObject = PFFileObject(name: "photo.jpg",
                                        data: photoImageChosen.jpegData(compressionQuality: 0.1)!)
     let post = PFObject(className: "Post")

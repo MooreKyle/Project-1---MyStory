@@ -190,10 +190,23 @@
                                                         <constraint firstAttribute="width" constant="34" id="xtH-2h-Svu"/>
                                                     </constraints>
                                                 </view>
+                                                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHt-Se-N67">
+                                                    <rect key="frame" x="20" y="50" width="350" height="350"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uuk-mQ-daa">
+                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="350"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="350" id="Ftu-Jp-m7d"/>
+                                                        <constraint firstAttribute="height" constant="350" id="Pd3-9A-arH"/>
+                                                    </constraints>
+                                                    <blurEffect style="regular"/>
+                                                </visualEffectView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="VwR-PP-qY3" firstAttribute="leading" secondItem="KQb-7X-a6A" secondAttribute="leading" constant="20" id="1c3-b4-sl1"/>
                                                 <constraint firstItem="wuN-AD-9C1" firstAttribute="top" secondItem="KQb-7X-a6A" secondAttribute="top" constant="6" id="Bxc-zw-ljk"/>
+                                                <constraint firstItem="qHt-Se-N67" firstAttribute="top" secondItem="cXg-Sp-IzV" secondAttribute="bottom" constant="4.3300000000000001" id="HAA-F8-5uW"/>
                                                 <constraint firstAttribute="trailing" secondItem="VwR-PP-qY3" secondAttribute="trailing" constant="20" id="JY2-Pb-ull"/>
                                                 <constraint firstItem="qzh-7L-1Nh" firstAttribute="top" secondItem="cXg-Sp-IzV" secondAttribute="bottom" constant="4" id="Mer-St-F7v"/>
                                                 <constraint firstAttribute="bottom" secondItem="VwR-PP-qY3" secondAttribute="bottom" constant="4" id="WL0-ev-zF0"/>
@@ -205,9 +218,11 @@
                                                 <constraint firstItem="qzh-7L-1Nh" firstAttribute="leading" secondItem="KQb-7X-a6A" secondAttribute="leading" constant="20" id="eqx-cF-gj8"/>
                                                 <constraint firstAttribute="trailing" secondItem="qzh-7L-1Nh" secondAttribute="trailing" constant="20" id="gF5-wS-vA1"/>
                                                 <constraint firstItem="qzh-7L-1Nh" firstAttribute="top" secondItem="9Cw-wb-txr" secondAttribute="bottom" constant="4.6699999999999999" id="ghX-c0-uYr"/>
+                                                <constraint firstItem="qHt-Se-N67" firstAttribute="trailing" secondItem="qzh-7L-1Nh" secondAttribute="trailingMargin" constant="8" id="gnV-7n-gFz"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="cXg-Sp-IzV" secondAttribute="trailing" constant="4" id="og4-WX-pZn"/>
                                                 <constraint firstItem="cXg-Sp-IzV" firstAttribute="leading" secondItem="9Cw-wb-txr" secondAttribute="trailing" constant="4" id="qqV-8h-FTl"/>
                                                 <constraint firstItem="wuN-AD-9C1" firstAttribute="leading" secondItem="9Cw-wb-txr" secondAttribute="trailing" constant="4" id="vPO-Kv-kiY"/>
+                                                <constraint firstItem="qHt-Se-N67" firstAttribute="leading" secondItem="qzh-7L-1Nh" secondAttribute="leadingMargin" constant="-8" id="z00-Ty-5J9"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -215,6 +230,7 @@
                                             <outlet property="authorInitials" destination="rFd-mi-l6I" id="wwz-TU-Zof"/>
                                             <outlet property="authorInitialsContainerView" destination="9Cw-wb-txr" id="jXR-Sb-7X7"/>
                                             <outlet property="authorLabel" destination="wuN-AD-9C1" id="E1K-Xf-2ka"/>
+                                            <outlet property="blurView" destination="qHt-Se-N67" id="yBw-Sf-X4M"/>
                                             <outlet property="captionLabel" destination="VwR-PP-qY3" id="wZh-Du-ekf"/>
                                             <outlet property="photoImageView" destination="qzh-7L-1Nh" id="Thk-ui-NHd"/>
                                         </connections>
