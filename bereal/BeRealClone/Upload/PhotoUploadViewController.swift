@@ -18,11 +18,15 @@ class PhotoUploadViewController: UIViewController,
   @IBOutlet private weak var captionTextField: UITextField!
   private var photoImageChosen: UIImage?
   
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    selectPhotoButton.setTitle(isUnit5 ? "Select Photo" : "Open Camera", for: .normal)
+  }
+  
   // MARK: IBActions
   
   @IBAction func selectPhotoButtonTapped(_ sender: UIButton) {
-    let isPart1OfProject = false
-    if isPart1OfProject {
+    if isUnit5 {
       openPhotoPicker()
     } else {
       openCamera()

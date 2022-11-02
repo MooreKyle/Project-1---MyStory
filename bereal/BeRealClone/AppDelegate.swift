@@ -8,6 +8,8 @@
 import UIKit
 import Parse
 
+let isUnit5 = false // Changing this will toggle certain features
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
