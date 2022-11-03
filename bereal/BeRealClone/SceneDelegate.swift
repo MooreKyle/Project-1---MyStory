@@ -34,6 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   private func login() {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "PostFeedNav")
+    requestNotificationPermissionIfNeeded()
   }
   
   private func logout() {
@@ -43,8 +44,39 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       } else {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "Login")
+        self.unregisterLocalNotifications()
       }
     }
+  }
+  
+  private func requestNotificationPermissionIfNeeded() {
+    UNUserNotificationCenter.current().requestAuthorization(options: [.alert]) { [unowned self] isGranted, error in
+      guard isGranted else {
+        print("User didn't grant notifications permission")
+        return
+      }
+      self.registerLocalNotifications()
+    }
+  }
+  
+  private func registerLocalNotifications() {
+    let content = UNMutableNotificationContent()
+    content.title = "BeReal"
+    content.body = "Remember to upload today's photo!"
+    let tomorrow = TimeInterval(60 * 60 * 24)
+    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: tomorrow, repeats: true)
+    let request = UNNotificationRequest(identifier: "PostReminderNotification",
+                                        content: content,
+                                        trigger: trigger)
+    UNUserNotificationCenter.current().add(request) { error in
+       if let error = error {
+         print("Error when registering for notification \(error.localizedDescription)")
+       }
+    }
+  }
+  
+  private func unregisterLocalNotifications() {
+    UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
   }
   
   func sceneDidDisconnect(_ scene: UIScene) {
