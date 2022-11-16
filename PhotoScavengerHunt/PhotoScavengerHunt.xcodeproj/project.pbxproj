@@ -9,13 +9,17 @@
 /* Begin PBXBuildFile section */
 		9943C6C629247DF000AF4DEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9943C6C529247DF000AF4DEA /* AppDelegate.swift */; };
 		9943C6C829247DF000AF4DEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9943C6C729247DF000AF4DEA /* SceneDelegate.swift */; };
-		9943C6CA29247DF100AF4DEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9943C6C929247DF100AF4DEA /* ViewController.swift */; };
+		9943C6CA29247DF100AF4DEA /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9943C6C929247DF100AF4DEA /* TaskListViewController.swift */; };
 		9943C6CD29247DF100AF4DEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9943C6CB29247DF100AF4DEA /* Main.storyboard */; };
 		9943C6CF29247DF200AF4DEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9943C6CE29247DF200AF4DEA /* Assets.xcassets */; };
 		9943C6D229247DF200AF4DEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9943C6D029247DF200AF4DEA /* LaunchScreen.storyboard */; };
 		9943C6DD29247DF200AF4DEA /* PhotoScavengerHuntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9943C6DC29247DF200AF4DEA /* PhotoScavengerHuntTests.swift */; };
 		9943C6E729247DF200AF4DEA /* PhotoScavengerHuntUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9943C6E629247DF200AF4DEA /* PhotoScavengerHuntUITests.swift */; };
 		9943C6E929247DF200AF4DEA /* PhotoScavengerHuntUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9943C6E829247DF200AF4DEA /* PhotoScavengerHuntUITestsLaunchTests.swift */; };
+		9943C6F629247E7E00AF4DEA /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9943C6F529247E7E00AF4DEA /* Task.swift */; };
+		9943C6F8292487F300AF4DEA /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9943C6F7292487F300AF4DEA /* TaskCell.swift */; };
+		9943C6FA2924894500AF4DEA /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9943C6F92924894500AF4DEA /* TaskDetailViewController.swift */; };
+		9943C6FC29249F7700AF4DEA /* PhotoAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9943C6FB29249F7700AF4DEA /* PhotoAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +43,7 @@
 		9943C6C229247DF000AF4DEA /* PhotoScavengerHunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoScavengerHunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9943C6C529247DF000AF4DEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9943C6C729247DF000AF4DEA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9943C6C929247DF100AF4DEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9943C6C929247DF100AF4DEA /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		9943C6CC29247DF100AF4DEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9943C6CE29247DF200AF4DEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9943C6D129247DF200AF4DEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +53,10 @@
 		9943C6E229247DF200AF4DEA /* PhotoScavengerHuntUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoScavengerHuntUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9943C6E629247DF200AF4DEA /* PhotoScavengerHuntUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoScavengerHuntUITests.swift; sourceTree = "<group>"; };
 		9943C6E829247DF200AF4DEA /* PhotoScavengerHuntUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoScavengerHuntUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9943C6F529247E7E00AF4DEA /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		9943C6F7292487F300AF4DEA /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		9943C6F92924894500AF4DEA /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		9943C6FB29249F7700AF4DEA /* PhotoAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +109,11 @@
 			children = (
 				9943C6C529247DF000AF4DEA /* AppDelegate.swift */,
 				9943C6C729247DF000AF4DEA /* SceneDelegate.swift */,
-				9943C6C929247DF100AF4DEA /* ViewController.swift */,
+				9943C6C929247DF100AF4DEA /* TaskListViewController.swift */,
+				9943C6F92924894500AF4DEA /* TaskDetailViewController.swift */,
+				9943C6FB29249F7700AF4DEA /* PhotoAnnotationView.swift */,
+				9943C6F7292487F300AF4DEA /* TaskCell.swift */,
+				9943C6F529247E7E00AF4DEA /* Task.swift */,
 				9943C6CB29247DF100AF4DEA /* Main.storyboard */,
 				9943C6CE29247DF200AF4DEA /* Assets.xcassets */,
 				9943C6D029247DF200AF4DEA /* LaunchScreen.storyboard */,
@@ -258,9 +270,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9943C6CA29247DF100AF4DEA /* ViewController.swift in Sources */,
+				9943C6FA2924894500AF4DEA /* TaskDetailViewController.swift in Sources */,
+				9943C6FC29249F7700AF4DEA /* PhotoAnnotationView.swift in Sources */,
+				9943C6F629247E7E00AF4DEA /* Task.swift in Sources */,
+				9943C6CA29247DF100AF4DEA /* TaskListViewController.swift in Sources */,
 				9943C6C629247DF000AF4DEA /* AppDelegate.swift in Sources */,
 				9943C6C829247DF000AF4DEA /* SceneDelegate.swift in Sources */,
+				9943C6F8292487F300AF4DEA /* TaskCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +455,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PhotoScavengerHunt/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "For attaching photos to tasks";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -466,6 +483,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PhotoScavengerHunt/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "For attaching photos to tasks";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
