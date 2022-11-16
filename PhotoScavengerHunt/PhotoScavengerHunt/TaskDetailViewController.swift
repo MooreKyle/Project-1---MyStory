@@ -65,13 +65,15 @@ class TaskDetailViewController: UIViewController, PHPickerViewControllerDelegate
   }
   
   private func openPhotoPicker() {
-    var config = PHPickerConfiguration(photoLibrary: PHPhotoLibrary.shared())
-    config.filter = .images
-    config.selectionLimit = 1
-    config.preferredAssetRepresentationMode = .current
-    let controller = PHPickerViewController(configuration: config)
-    controller.delegate = self
-    present(controller, animated: true)
+    DispatchQueue.main.async { [unowned self] in
+      var config = PHPickerConfiguration(photoLibrary: PHPhotoLibrary.shared())
+      config.filter = .images
+      config.selectionLimit = 1
+      config.preferredAssetRepresentationMode = .current
+      let controller = PHPickerViewController(configuration: config)
+      controller.delegate = self
+      self.present(controller, animated: true)
+    }
   }
   
   private func addMapAnnotation() {
