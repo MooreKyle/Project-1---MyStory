@@ -27,7 +27,7 @@ class MovieDetailsViewController: UIViewController {
     
   private func configure(with movie: Movie) {
     titleLabel.text = movie.title
-    descriptionLabel.text = movie.description
+    descriptionLabel.text = movie.overview
     averageScoreLabel.text = "\(movie.voteAverage) Vote Average"
     numVotesLabel.text = "\(movie.voteCount) Votes"
     popularityLabel.text = "\(movie.popularity) Popularity"
