@@ -28,9 +28,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="edf-63-HK4">
-                                                    <rect key="frame" x="20" y="11" width="75" height="75"/>
+                                                    <rect key="frame" x="20" y="11" width="75" height="77"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="75" id="B9k-ZY-lbi"/>
                                                         <constraint firstAttribute="width" constant="75" id="pgr-nf-tvo"/>
                                                     </constraints>
                                                 </imageView>
@@ -48,14 +47,14 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="edf-63-HK4" secondAttribute="bottom" id="6rJ-MA-NSG"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="edf-63-HK4" secondAttribute="bottom" id="6rJ-MA-NSG"/>
                                                 <constraint firstItem="AYg-MV-Ace" firstAttribute="leading" secondItem="edf-63-HK4" secondAttribute="trailing" constant="4" id="70Y-y7-672"/>
                                                 <constraint firstItem="AYg-MV-Ace" firstAttribute="top" secondItem="Tyf-ui-1Ok" secondAttribute="topMargin" id="FNF-Lv-eD9"/>
-                                                <constraint firstItem="edf-63-HK4" firstAttribute="leading" secondItem="Tyf-ui-1Ok" secondAttribute="leadingMargin" id="Fdl-7O-wA9"/>
                                                 <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="5IA-z1-DdJ" secondAttribute="bottom" constant="4" id="HcU-8N-tYY"/>
                                                 <constraint firstItem="5IA-z1-DdJ" firstAttribute="top" secondItem="AYg-MV-Ace" secondAttribute="bottom" constant="4" id="Jem-XW-P1p"/>
                                                 <constraint firstItem="5IA-z1-DdJ" firstAttribute="leading" secondItem="edf-63-HK4" secondAttribute="trailing" constant="4" id="Ybm-5s-Jj7"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="AYg-MV-Ace" secondAttribute="trailing" id="Yhr-yN-nw5"/>
+                                                <constraint firstItem="edf-63-HK4" firstAttribute="leading" secondItem="Tyf-ui-1Ok" secondAttribute="leadingMargin" id="eXd-DD-1t0"/>
                                                 <constraint firstItem="edf-63-HK4" firstAttribute="top" secondItem="Tyf-ui-1Ok" secondAttribute="topMargin" id="q3z-2j-em5"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="5IA-z1-DdJ" secondAttribute="trailing" id="sh3-mI-fI1"/>
                                             </constraints>
@@ -102,21 +101,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bTX-wT-geG">
-                                <rect key="frame" x="0.0" y="91" width="390" height="150"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bTX-wT-geG">
+                                <rect key="frame" x="0.0" y="91" width="390" height="200"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="MsD-TR-ube"/>
+                                    <constraint firstAttribute="height" constant="200" id="MsD-TR-ube"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhF-kh-BIm">
-                                <rect key="frame" x="4" y="277.33333333333331" width="382" height="18"/>
+                                <rect key="frame" x="4" y="327.33333333333331" width="382" height="18"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9h-ex-1Jl">
-                                <rect key="frame" x="4" y="253.00000000000003" width="382" height="20.333333333333343"/>
+                                <rect key="frame" x="4" y="303" width="382" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

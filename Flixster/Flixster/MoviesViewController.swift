@@ -18,6 +18,7 @@ class MoviesViewController: UIViewController,
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    tableView.rowHeight = UITableView.automaticDimension
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

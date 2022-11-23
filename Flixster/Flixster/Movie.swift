@@ -10,6 +10,14 @@ import Foundation
 let HARDCODED_MOVIES = [Movie(title: "Black Adam",
                               description: "Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods—and imprisoned just as quickly—Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world.",
                               posterPath: "/pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg",
+                              backdropPath: "/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg"),
+                        Movie(title: "Black Adam",
+                              description: "Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods—and imprisoned just as quickly—Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world.",
+                              posterPath: "/pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg",
+                              backdropPath: "/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg"),
+                        Movie(title: "Black Adam",
+                              description: "Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods—and imprisoned just as quickly—Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world.",
+                              posterPath: "/pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg",
                               backdropPath: "/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg")]
 
 struct Movie: Codable {
@@ -17,4 +25,10 @@ struct Movie: Codable {
   let description: String
   let posterPath: String
   let backdropPath: String
+  var posterURL: URL {
+    return URL(string: "https://image.tmdb.org/t/p/w185/\(posterPath)")!
+  }
+  var backdropURL: URL {
+    return URL(string: "https://image.tmdb.org/t/p/w1280\(backdropPath)")!
+  }
 }

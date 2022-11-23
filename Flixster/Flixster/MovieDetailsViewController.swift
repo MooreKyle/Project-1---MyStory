@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class MovieDetailsViewController: UIViewController {
   
@@ -23,5 +25,10 @@ class MovieDetailsViewController: UIViewController {
   private func configure(with movie: Movie) {
     titleLabel.text = movie.title
     descriptionLabel.text = movie.description
+    AF.request(movie.backdropURL).responseImage { [unowned self] response in
+      if case .success(let image) = response.result {
+        backdropImageView.image = image
+      }
+    }
   }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9943C73E292E97E400AF4DEA /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9943C73D292E97E400AF4DEA /* MovieDetailsViewController.swift */; };
 		9943C740292E984500AF4DEA /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9943C73F292E984500AF4DEA /* MovieTableViewCell.swift */; };
+		99D0960E292EADC3001C5ED5 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 99D0960D292EADC3001C5ED5 /* AlamofireImage */; };
 		99D4FD17292D94D000CC7E99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D4FD16292D94D000CC7E99 /* AppDelegate.swift */; };
 		99D4FD19292D94D000CC7E99 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D4FD18292D94D000CC7E99 /* SceneDelegate.swift */; };
 		99D4FD1B292D94D000CC7E99 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D4FD1A292D94D000CC7E99 /* MoviesViewController.swift */; };
@@ -62,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99D0960E292EADC3001C5ED5 /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +154,9 @@
 			dependencies = (
 			);
 			name = Flixster;
+			packageProductDependencies = (
+				99D0960D292EADC3001C5ED5 /* AlamofireImage */,
+			);
 			productName = Flixster;
 			productReference = 99D4FD13292D94D000CC7E99 /* Flixster.app */;
 			productType = "com.apple.product-type.application";
@@ -224,6 +229,9 @@
 				Base,
 			);
 			mainGroup = 99D4FD0A292D94D000CC7E99;
+			packageReferences = (
+				99D0960C292EADC3001C5ED5 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+			);
 			productRefGroup = 99D4FD14292D94D000CC7E99 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -608,6 +616,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		99D0960C292EADC3001C5ED5 /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		99D0960D292EADC3001C5ED5 /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99D0960C292EADC3001C5ED5 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 99D4FD0B292D94D000CC7E99 /* Project object */;
 }
