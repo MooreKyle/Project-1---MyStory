@@ -14,6 +14,9 @@ class MovieDetailsViewController: UIViewController {
   @IBOutlet weak var backdropImageView: UIImageView!
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var descriptionLabel: UILabel!
+  @IBOutlet weak var averageScoreLabel: UILabel!
+  @IBOutlet weak var numVotesLabel: UILabel!
+  @IBOutlet weak var popularityLabel: UILabel!
   
   var movie: Movie!
   
@@ -25,6 +28,9 @@ class MovieDetailsViewController: UIViewController {
   private func configure(with movie: Movie) {
     titleLabel.text = movie.title
     descriptionLabel.text = movie.description
+    averageScoreLabel.text = "\(movie.voteAverage) Vote Average"
+    numVotesLabel.text = "\(movie.voteCount) Votes"
+    popularityLabel.text = "\(movie.popularity) Popularity"
     AF.request(movie.backdropURL).responseImage { [unowned self] response in
       if case .success(let image) = response.result {
         backdropImageView.image = image
