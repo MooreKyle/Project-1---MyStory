@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Parse
+import ParseSwift
 
 extension Date {
   func hours(from date: Date) -> Int {
@@ -43,7 +43,7 @@ class PostCellTableViewCell: UITableViewCell {
   // MARK: Private Methods
   
   private func updateBlurView() {
-    if let loggedInUserLastPostedDate = PFUser.current()!["lastPostedDate"] as? Date {
+    if let loggedInUserLastPostedDate = User.current!["lastPostedDate"] as? Date {
       let numHoursDifference = postObject!.createdAt!.hours(from: loggedInUserLastPostedDate)
       blurView.isHidden = abs(numHoursDifference) < 24
     } else {

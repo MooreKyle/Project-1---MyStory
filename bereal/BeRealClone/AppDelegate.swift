@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Parse
+import ParseSwift
 
 let isUnit5 = false // Changing this will toggle certain features
 
@@ -14,11 +14,14 @@ let isUnit5 = false // Changing this will toggle certain features
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-      Parse.initialize(with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) in
-        configuration.applicationId = "wVXphT3QrBoSAVma0vmGeRiQ5wpJhL0z06jFRCQk"
-        configuration.clientKey = "Wo3irzF0bVS7bmkhJImBeUNH5OxO8EU6bIqV7fPY"
-        configuration.server = "https://parseapi.back4app.com"
-      }))
+      
+      ParseSwift.initialize(applicationId: "wVXphT3QrBoSAVma0vmGeRiQ5wpJhL0z06jFRCQk",
+                            clientKey: "Wo3irzF0bVS7bmkhJImBeUNH5OxO8EU6bIqV7fPY",
+                            masterKey: nil,
+                            serverURL: URL(string: "https://parseapi.back4app.com")!,
+                            requiringCustomObjectIds: false,
+                            usingEqualQueryConstraint: false,
+                            usingDataProtectionKeychain: false)
         return true
     }
 

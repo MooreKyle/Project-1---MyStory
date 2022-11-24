@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Parse
+import ParseSwift
 
 enum SectionType: Int {
   case selfSection = 0

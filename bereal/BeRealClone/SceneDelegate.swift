@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Parse
+import ParseSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   
@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       self.logout()
     }
     
-    if PFUser.current() != nil {
+    if User.current != nil {
       self.login()
     }
   }
@@ -38,13 +38,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   }
   
   private func logout() {
-    PFUser.logOutInBackground { [unowned self] error in
-      if let error = error {
-        print("Logout error: \(error)")
-      } else {
+    User.logout { [unowned self] result in
+      switch result {
+      case .success:
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "Login")
         self.unregisterLocalNotifications()
+      case .failure(let error):
+        print("Logout error: \(error)")
       }
     }
   }

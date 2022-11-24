@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Parse
+import ParseSwift
 
 class LoginViewController: UIViewController {
   
@@ -27,12 +27,13 @@ class LoginViewController: UIViewController {
     }
     let username = usernameTextField.text ?? ""
     let password = passwordTextField.text ?? ""
-    PFUser.logInWithUsername(inBackground: username, password: password) { [unowned self] user, error in
-      if let error = error {
-        self.displayLoginError(error: error)
-      } else {
-        print("User \(user?.username ?? "") login success")
+    User.login(username: username, password: password) { [unowned self] result in
+      switch result {
+      case .success(let user):
+        print("User \(user.username ?? "") login success")
         NotificationCenter.default.post(name: NSNotification.Name("login"), object: nil)
+      case .failure(let error):
+        displayLoginError(error: error)
       }
     }
   }
@@ -42,15 +43,14 @@ class LoginViewController: UIViewController {
       displayEmptyTextFieldError()
       return
     }
-    let newUser = PFUser()
-    newUser.username = usernameTextField.text
-    newUser.password = passwordTextField.text
-    newUser.signUpInBackground { [unowned self] isSuccess, error in
-      if let error = error {
-        self.displaySignupError(error: error)
-      } else {
-        print("User \(newUser.username!) Registered Successfully")
+    User.signup(username: usernameTextField.text!,
+                password: passwordTextField.text!) { result in
+      switch result {
+      case .success(let user):
+        print("User \(user.username ?? "") Registered Successfully")
         NotificationCenter.default.post(name: NSNotification.Name("login"), object: nil)
+      case .failure(let error):
+        self.displaySignupError(error: error)
       }
     }
   }

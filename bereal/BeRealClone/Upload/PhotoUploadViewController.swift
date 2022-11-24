@@ -7,7 +7,7 @@
 
 import UIKit
 import PhotosUI
-import Parse
+import ParseSwift
 
 class PhotoUploadViewController: UIViewController,
                                  PHPickerViewControllerDelegate,
@@ -35,7 +35,7 @@ class PhotoUploadViewController: UIViewController,
   
   @IBAction func postPhotoButtonTapped(_ sender: UIButton) {
     guard let photoImageChosen = self.photoImageChosen,
-          let user = PFUser.current() else { return }
+          let user = User.current else { return }
     
     user["lastPostedDate"] = NSDate()
     let imageFileObject = PFFileObject(name: "photo.jpg",
