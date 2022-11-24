@@ -107,7 +107,14 @@ class PostFeedViewController: UIViewController,
   }
   
   private func queryPosts(completion: (() -> Void)? = nil) {
-    let query = Query<Post>().include("user")
+    let yesterday = Calendar.current.date(byAdding: .day,
+                                          value: -1,
+                                          to: Date())!
+    let constraint: QueryConstraint = "createdAt" >= yesterday
+    let query = Query<Post>([constraint])
+      .include("user")
+      .limit(10)
+      .order([.descending("createdAt")])
     query.find { result in
       switch result {
       case .success(let posts):
@@ -115,21 +122,7 @@ class PostFeedViewController: UIViewController,
       case .failure(let error):
         print(error)
       }
+      completion?()
     }
-    //    let yesterday = Calendar.current.date(byAdding: .day,
-    //                                          value: -1,
-    //                                          to: Date())!
-    //    query.whereKey("createdAt", greaterThanOrEqualTo: yesterday)
-    //    query.includeKey("user")
-    //    query.addDescendingOrder("createdAt")
-    //    query.limit = 10
-    //    query.findObjectsInBackground { [unowned self] posts, error in
-    //      if let error = error {
-    //        print("Error in fetching messages: \(error.localizedDescription)")
-    //      } else {
-    //        self.posts = posts ?? []
-    //      }
-    //      completion?()
-    //    }
   }
 }

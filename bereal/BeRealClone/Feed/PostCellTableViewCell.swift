@@ -30,7 +30,7 @@ class PostCellTableViewCell: UITableViewCell {
   @IBOutlet private weak var blurView: UIVisualEffectView!
   
   private var post: Post?
-  private var imageFileObject: ParseFile?
+  private var imageDataRequest: DataRequest?
   
   // MARK: Public
   
@@ -76,7 +76,7 @@ class PostCellTableViewCell: UITableViewCell {
       assertionFailure("Expected image file and url")
       return
     }
-    AF.request(url).responseImage { [unowned self] response in
+    imageDataRequest = AF.request(url).responseImage { [unowned self] response in
       if case .success(let image) = response.result {
         self.photoImageView.image = image
       }
@@ -91,7 +91,7 @@ class PostCellTableViewCell: UITableViewCell {
   
   override func prepareForReuse() {
     super.prepareForReuse()
-    // todo need to handle image fetch cancellation
+    imageDataRequest?.cancel()
     post = nil
     photoImageView.image = nil
     captionLabel.text = ""
