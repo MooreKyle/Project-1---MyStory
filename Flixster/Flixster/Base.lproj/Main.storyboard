@@ -207,7 +207,7 @@
         <scene sceneID="Xpd-t5-THs">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iJz-tv-tri" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Now Playing" id="4yX-3m-MyX"/>
+                    <tabBarItem key="tabBarItem" title="Now Playing" image="film" catalog="system" selectedImage="film" id="4yX-3m-MyX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ye0-NO-pHk">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
@@ -311,7 +311,7 @@
         <scene sceneID="KCV-YE-fCM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="85n-tZ-hTF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Posters" id="MbZ-we-jsM"/>
+                    <tabBarItem key="tabBarItem" title="Posters" image="doc.richtext" catalog="system" selectedImage="doc.richtext.ko" id="MbZ-we-jsM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IDE-yv-H9t">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
@@ -329,9 +329,12 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="KQo-oh-7yl"/>
-        <segue reference="exl-1e-N6X"/>
+        <segue reference="8N7-Vx-WBE"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="doc.richtext" catalog="system" width="115" height="128"/>
+        <image name="doc.richtext.ko" catalog="system" width="115" height="128"/>
+        <image name="film" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
