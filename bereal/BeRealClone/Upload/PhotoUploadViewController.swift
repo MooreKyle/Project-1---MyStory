@@ -36,21 +36,19 @@ class PhotoUploadViewController: UIViewController,
   @IBAction func postPhotoButtonTapped(_ sender: UIButton) {
     guard let photoImageChosen = self.photoImageChosen,
           var user = User.current else { return }
-    var post = Post()
-    // todo gotta fix this
-    user.lastPostedDate = Date()
-    post.user = user
-    post.image = ParseFile(data: photoImageChosen.jpegData(compressionQuality: 0.1)!)
-    post.caption = captionTextField.text
-    post.save(callbackQueue: .main) { [unowned self] result in
-      switch result {
-      case .success(_):
-        // For some reason, it's still being called in a bg queue even though main is specified above
-        DispatchQueue.main.async { [unowned self] in
-          self.navigationController?.popViewController(animated: true)
-        }
-      case .failure(let error):
-        assertionFailure("\(error.description)")
+    let caption = captionTextField.text
+    DispatchQueue.global().async { [unowned self] in
+      var post = Post()
+      post.user = user
+      post.image = ParseFile(data: photoImageChosen.jpegData(compressionQuality: 0.1)!)
+      post.caption = caption
+      _ = try! post.save()
+      
+      user.lastPostedDate = Date()
+      _ = try! user.save()
+      
+      DispatchQueue.main.async {
+        self.navigationController?.popViewController(animated: true)
       }
     }
   }
