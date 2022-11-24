@@ -13,7 +13,7 @@ class MoviesViewController: UIViewController,
   
   @IBOutlet weak var tableView: UITableView!
 
-  private let kMovieDetailSegueIdentifier = "ShowMovieDetailSegue"
+  private let kSegueIdentifier = "ShowMovieDetailFromMovieListSegue"
   private var movies = [Movie]() {
     didSet {
       tableView.reloadData()
@@ -41,11 +41,11 @@ class MoviesViewController: UIViewController,
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     selectedMovie = movies[indexPath.row]
-    performSegue(withIdentifier: kMovieDetailSegueIdentifier, sender: nil)
+    performSegue(withIdentifier: kSegueIdentifier, sender: nil)
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    guard segue.identifier == kMovieDetailSegueIdentifier else { return }
+    guard segue.identifier == kSegueIdentifier else { return }
     let movieDetailsViewController = segue.destination as! MovieDetailsViewController
     movieDetailsViewController.movie = selectedMovie!
   }

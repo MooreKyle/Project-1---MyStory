@@ -87,7 +87,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Sv4-Qr-26i" id="V6W-ND-N8J"/>
-                        <segue destination="bqS-iY-BxX" kind="show" identifier="ShowMovieDetailSegue" id="t0v-Nf-am0"/>
+                        <segue destination="bqS-iY-BxX" kind="show" identifier="ShowMovieDetailFromMovieListSegue" id="t0v-Nf-am0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -209,33 +209,50 @@
             </objects>
             <point key="canvasLocation" x="1060" y="-28.436018957345969"/>
         </scene>
-        <!--Movies-->
+        <!--Posters-->
         <scene sceneID="HXd-UR-9nh">
             <objects>
-                <viewController id="5Mw-rl-lNr" sceneMemberID="viewController">
+                <viewController id="5Mw-rl-lNr" customClass="PostersViewController" customModule="Flixster" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c71-p4-U4X">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Y8b-ob-9Sd">
                                 <rect key="frame" x="0.0" y="91" width="390" height="670"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mn2-Pv-TrR">
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Mn2-Pv-TrR">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="yJ2-7f-Vtr">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PosterCollectionViewCell" id="yJ2-7f-Vtr" customClass="PosterCollectionViewCell" customModule="Flixster" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="IL6-Xo-UJQ">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kQn-sj-Qzh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="kQn-sj-Qzh" secondAttribute="bottom" id="GYb-py-wZv"/>
+                                                <constraint firstAttribute="trailing" secondItem="kQn-sj-Qzh" secondAttribute="trailing" id="PyZ-cs-r4q"/>
+                                                <constraint firstItem="kQn-sj-Qzh" firstAttribute="leading" secondItem="IL6-Xo-UJQ" secondAttribute="leading" id="WFY-JM-PAe"/>
+                                                <constraint firstItem="kQn-sj-Qzh" firstAttribute="top" secondItem="IL6-Xo-UJQ" secondAttribute="top" id="iEr-tX-VGg"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="posterImageView" destination="kQn-sj-Qzh" id="YAS-0S-TsI"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="5Mw-rl-lNr" id="BPN-IK-ONG"/>
+                                    <outlet property="delegate" destination="5Mw-rl-lNr" id="744-74-8l8"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="42T-9N-SVB"/>
@@ -246,11 +263,14 @@
                             <constraint firstItem="42T-9N-SVB" firstAttribute="trailing" secondItem="Y8b-ob-9Sd" secondAttribute="trailing" id="yFE-mU-zTP"/>
                             <constraint firstItem="42T-9N-SVB" firstAttribute="bottom" secondItem="Y8b-ob-9Sd" secondAttribute="bottom" id="z97-28-qpE"/>
                         </constraints>
-                        <connections>
-                            <outlet property="collectionView" destination="Y8b-ob-9Sd" id="sZp-ld-Dv8"/>
-                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Movies" id="Xf9-Ak-h8w"/>
+                    <navigationItem key="navigationItem" title="Posters" id="Xf9-Ak-h8w">
+                        <barButtonItem key="backBarButtonItem" title=" " id="0Ye-KC-rRr"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="Y8b-ob-9Sd" id="zat-i2-wIR"/>
+                        <segue destination="bqS-iY-BxX" kind="show" identifier="ShowMovieDetailFromPosterSegue" id="KQo-oh-7yl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0va-PR-E8n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -294,6 +314,9 @@
             <point key="canvasLocation" x="1069.2307692307693" y="717.29857819905214"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="KQo-oh-7yl"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

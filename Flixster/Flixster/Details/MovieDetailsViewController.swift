@@ -11,6 +11,8 @@ import AlamofireImage
 
 class MovieDetailsViewController: UIViewController {
   
+  static let presentMovieDetailSegueIdentifier = "ShowMovieDetailSegue"
+  
   @IBOutlet weak var backdropImageView: UIImageView!
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var descriptionLabel: UILabel!
