@@ -21,7 +21,7 @@ class PostFeedViewController: UIViewController,
   @IBOutlet private weak var logoutButton: UIButton!
   private let refreshControl = UIRefreshControl()
   
-  private var posts = [PFObject]() {
+  private var posts = [Post]() {
     didSet {
       tableView.reloadData()
     }
@@ -107,21 +107,29 @@ class PostFeedViewController: UIViewController,
   }
   
   private func queryPosts(completion: (() -> Void)? = nil) {
-    let query = PFQuery(className: "Post")
-    let yesterday = Calendar.current.date(byAdding: .day,
-                                          value: -1,
-                                          to: Date())!
-    query.whereKey("createdAt", greaterThanOrEqualTo: yesterday)
-    query.includeKey("user")
-    query.addDescendingOrder("createdAt")
-    query.limit = 10
-    query.findObjectsInBackground { [unowned self] posts, error in
-      if let error = error {
-        print("Error in fetching messages: \(error.localizedDescription)")
-      } else {
-        self.posts = posts ?? []
+    let query = Query<Post>().include("user")
+    query.find { result in
+      switch result {
+      case .success(let posts):
+        self.posts = posts
+      case .failure(let error):
+        print(error)
       }
-      completion?()
     }
+    //    let yesterday = Calendar.current.date(byAdding: .day,
+    //                                          value: -1,
+    //                                          to: Date())!
+    //    query.whereKey("createdAt", greaterThanOrEqualTo: yesterday)
+    //    query.includeKey("user")
+    //    query.addDescendingOrder("createdAt")
+    //    query.limit = 10
+    //    query.findObjectsInBackground { [unowned self] posts, error in
+    //      if let error = error {
+    //        print("Error in fetching messages: \(error.localizedDescription)")
+    //      } else {
+    //        self.posts = posts ?? []
+    //      }
+    //      completion?()
+    //    }
   }
 }

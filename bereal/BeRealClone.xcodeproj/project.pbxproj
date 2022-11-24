@@ -20,6 +20,8 @@
 		996C7207290B6DE700988772 /* PhotoUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996C7206290B6DE700988772 /* PhotoUploadViewController.swift */; };
 		99D0961B292FAE78001C5ED5 /* ParseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 99D0961A292FAE78001C5ED5 /* ParseSwift */; };
 		99D0961D292FB3D3001C5ED5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D0961C292FB3D3001C5ED5 /* User.swift */; };
+		99D09620292FB9A2001C5ED5 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D0961F292FB9A2001C5ED5 /* Post.swift */; };
+		99D09623292FC3C7001C5ED5 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 99D09622292FC3C7001C5ED5 /* AlamofireImage */; };
 		99DD0BA3290E09A00047A363 /* PostCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DD0BA2290E09A00047A363 /* PostCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,7 @@
 		995A37B62908C4CA0055DFE0 /* PostFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFeedViewController.swift; sourceTree = "<group>"; };
 		996C7206290B6DE700988772 /* PhotoUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUploadViewController.swift; sourceTree = "<group>"; };
 		99D0961C292FB3D3001C5ED5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		99D0961F292FB9A2001C5ED5 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		99DD0BA2290E09A00047A363 /* PostCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +69,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99D0961B292FAE78001C5ED5 /* ParseSwift in Frameworks */,
+				99D09623292FC3C7001C5ED5 /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,7 +123,7 @@
 			children = (
 				995A37862908C0340055DFE0 /* AppDelegate.swift */,
 				995A37882908C0340055DFE0 /* SceneDelegate.swift */,
-				99D0961C292FB3D3001C5ED5 /* User.swift */,
+				99D0961E292FB992001C5ED5 /* Models */,
 				99DD0BA5290E09CF0047A363 /* Login */,
 				99DD0BA6290E09D50047A363 /* Upload */,
 				99DD0BA4290E09A90047A363 /* Feed */,
@@ -146,6 +150,15 @@
 				995A37A92908C0350055DFE0 /* BeRealCloneUITestsLaunchTests.swift */,
 			);
 			path = BeRealCloneUITests;
+			sourceTree = "<group>";
+		};
+		99D0961E292FB992001C5ED5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				99D0961C292FB3D3001C5ED5 /* User.swift */,
+				99D0961F292FB9A2001C5ED5 /* Post.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		99DD0BA4290E09A90047A363 /* Feed */ = {
@@ -191,6 +204,7 @@
 			name = BeRealClone;
 			packageProductDependencies = (
 				99D0961A292FAE78001C5ED5 /* ParseSwift */,
+				99D09622292FC3C7001C5ED5 /* AlamofireImage */,
 			);
 			productName = BeRealClone;
 			productReference = 995A37832908C0340055DFE0 /* BeRealClone.app */;
@@ -266,6 +280,7 @@
 			mainGroup = 995A377A2908C0340055DFE0;
 			packageReferences = (
 				99D09619292FAE78001C5ED5 /* XCRemoteSwiftPackageReference "Parse-Swift" */,
+				99D09621292FC3C7001C5ED5 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 			);
 			productRefGroup = 995A37842908C0340055DFE0 /* Products */;
 			projectDirPath = "";
@@ -313,6 +328,7 @@
 				995A37B72908C4CA0055DFE0 /* PostFeedViewController.swift in Sources */,
 				996C7207290B6DE700988772 /* PhotoUploadViewController.swift in Sources */,
 				995A378B2908C0340055DFE0 /* LoginViewController.swift in Sources */,
+				99D09620292FB9A2001C5ED5 /* Post.swift in Sources */,
 				99DD0BA3290E09A00047A363 /* PostCellTableViewCell.swift in Sources */,
 				995A37872908C0340055DFE0 /* AppDelegate.swift in Sources */,
 				995A37892908C0340055DFE0 /* SceneDelegate.swift in Sources */,
@@ -666,6 +682,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		99D09621292FC3C7001C5ED5 /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -673,6 +697,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 99D09619292FAE78001C5ED5 /* XCRemoteSwiftPackageReference "Parse-Swift" */;
 			productName = ParseSwift;
+		};
+		99D09622292FC3C7001C5ED5 /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99D09621292FC3C7001C5ED5 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

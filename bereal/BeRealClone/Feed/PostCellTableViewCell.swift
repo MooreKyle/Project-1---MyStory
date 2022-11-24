@@ -7,6 +7,8 @@
 
 import UIKit
 import ParseSwift
+import Alamofire
+import AlamofireImage
 
 extension Date {
   func hours(from date: Date) -> Int {
@@ -27,13 +29,13 @@ class PostCellTableViewCell: UITableViewCell {
   @IBOutlet private weak var authorInitialsContainerView: UIView!
   @IBOutlet private weak var blurView: UIVisualEffectView!
   
-  private var postObject: PFObject?
-  private var imageFileObject: PFFileObject?
+  private var post: Post?
+  private var imageFileObject: ParseFile?
   
   // MARK: Public
   
-  func configure(withObject object: PFObject) {
-    postObject = object
+  func configure(withObject object: Post) {
+    post = object
     updateBlurView()
     updateHeader()
     updateImage()
@@ -43,8 +45,8 @@ class PostCellTableViewCell: UITableViewCell {
   // MARK: Private Methods
   
   private func updateBlurView() {
-    if let loggedInUserLastPostedDate = User.current!["lastPostedDate"] as? Date {
-      let numHoursDifference = postObject!.createdAt!.hours(from: loggedInUserLastPostedDate)
+    if let loggedInUserLastPostedDate = User.current?.lastPostedDate {
+      let numHoursDifference = post!.createdAt!.hours(from: loggedInUserLastPostedDate)
       blurView.isHidden = abs(numHoursDifference) < 24
     } else {
       blurView.isHidden = false
@@ -52,7 +54,7 @@ class PostCellTableViewCell: UITableViewCell {
   }
   
   private func updateHeader() {
-    if let user = postObject!["user"] as? PFUser {
+    if let user = post?.user {
       let username = user.username
       authorLabel.text = username
       let usernameSplit = username!.split(separator: " ")
@@ -69,25 +71,28 @@ class PostCellTableViewCell: UITableViewCell {
   }
   
   private func updateImage() {
-    if let imageFileObject = postObject!["image"] as? PFFileObject {
-      self.imageFileObject = imageFileObject
-      imageFileObject.getDataInBackground { [unowned self] data, error in
-        guard let data = data else { return }
-        self.photoImageView.image = UIImage(data: data)
+    guard let imageFile = post?.image,
+          let url = imageFile.url else {
+      assertionFailure("Expected image file and url")
+      return
+    }
+    AF.request(url).responseImage { [unowned self] response in
+      if case .success(let image) = response.result {
+        self.photoImageView.image = image
       }
     }
   }
   
   private func updateCaption() {
-    captionLabel.text = postObject!["caption"] as? String
+    captionLabel.text = post?.caption
   }
   
   // MARK: Reuse
   
   override func prepareForReuse() {
     super.prepareForReuse()
-    imageFileObject?.cancel()
-    postObject = nil
+    // todo need to handle image fetch cancellation
+    post = nil
     photoImageView.image = nil
     captionLabel.text = ""
     authorLabel.text = ""
