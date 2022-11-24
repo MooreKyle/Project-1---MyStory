@@ -11,7 +11,7 @@ import AlamofireImage
 
 class MovieDetailsViewController: UIViewController {
   
-  static let presentMovieDetailSegueIdentifier = "ShowMovieDetailSegue"
+  private let kShowSimilarMoviesSegueIdentifier = "ShowSimilarMoviesSegue"
   
   @IBOutlet weak var backdropImageView: UIImageView!
   @IBOutlet weak var titleLabel: UILabel!
@@ -19,12 +19,23 @@ class MovieDetailsViewController: UIViewController {
   @IBOutlet weak var averageScoreLabel: UILabel!
   @IBOutlet weak var numVotesLabel: UILabel!
   @IBOutlet weak var popularityLabel: UILabel!
+  @IBOutlet weak var seeSimilarMoviesButton: UIButton!
   
   var movie: Movie!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     configure(with: movie)
+  }
+  
+  @IBAction func didTapSeeSimilarMoviesButton(_ sender: UIButton) {
+    performSegue(withIdentifier: kShowSimilarMoviesSegueIdentifier, sender: nil)
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard segue.identifier == kShowSimilarMoviesSegueIdentifier else { return }
+    let moviesViewController = segue.destination as! MoviesViewController
+    moviesViewController.movieRecommendation = movie
   }
     
   private func configure(with movie: Movie) {
@@ -33,9 +44,11 @@ class MovieDetailsViewController: UIViewController {
     averageScoreLabel.text = "\(movie.voteAverage) Vote Average"
     numVotesLabel.text = "\(movie.voteCount) Votes"
     popularityLabel.text = "\(movie.popularity) Popularity"
-    AF.request(movie.backdropURL).responseImage { [unowned self] response in
-      if case .success(let image) = response.result {
-        backdropImageView.image = image
+    if let backdropURL = movie.backdropURL {
+      AF.request(backdropURL).responseImage { [unowned self] response in
+        if case .success(let image) = response.result {
+          backdropImageView.image = image
+        }
       }
     }
   }

@@ -20,12 +20,20 @@ class MoviesViewController: UIViewController,
     }
   }
   private var selectedMovie: Movie?
+  var movieRecommendation: Movie?
   
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.rowHeight = UITableView.automaticDimension
-    MovieAPI.shared.fetchNowPlayingMovies { [unowned self] movies in
-      self.movies = movies
+    if let movieRecommendation = movieRecommendation {
+      navigationItem.title = "Similar Movies to \(movieRecommendation.title)"
+      MovieAPI.shared.fetchSimilarMovies(withMovieID: movieRecommendation.id) { [unowned self] movies in
+        self.movies = movies
+      }
+    } else {
+      MovieAPI.shared.fetchNowPlayingMovies { [unowned self] movies in
+        self.movies = movies
+      }
     }
   }
   

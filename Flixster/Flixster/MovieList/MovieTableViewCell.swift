@@ -24,9 +24,11 @@ class MovieTableViewCell: UITableViewCell {
   func configure(with movie: Movie) {
     titleLabel.text = movie.title
     descriptionLabel.text = movie.overview
-    imageRequest = AF.request(movie.posterURL).responseImage { [unowned self] response in
-      if case .success(let image) = response.result {
-        posterImageView.image = image
+    if let posterURL = movie.posterURL {
+      imageRequest = AF.request(posterURL).responseImage { [unowned self] response in
+        if case .success(let image) = response.result {
+          posterImageView.image = image
+        }
       }
     }
   }

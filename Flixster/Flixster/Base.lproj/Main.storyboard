@@ -158,6 +158,14 @@
                                     <constraint firstAttribute="height" constant="100" id="Zcm-7x-hxO"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEH-iJ-HeP">
+                                <rect key="frame" x="4" y="466.33333333333331" width="382" height="34.333333333333314"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="See Similar Movies"/>
+                                <connections>
+                                    <action selector="didTapSeeSimilarMoviesButton:" destination="bqS-iY-BxX" eventType="touchUpInside" id="TSp-Jn-YFV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3EC-9c-4sI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -166,12 +174,15 @@
                             <constraint firstItem="bTX-wT-geG" firstAttribute="top" secondItem="aDq-8p-fyh" secondAttribute="top" constant="50" id="AW2-IB-TWB"/>
                             <constraint firstItem="3EC-9c-4sI" firstAttribute="trailing" secondItem="bTX-wT-geG" secondAttribute="trailing" id="B6f-jM-WFD"/>
                             <constraint firstItem="bTX-wT-geG" firstAttribute="leading" secondItem="3EC-9c-4sI" secondAttribute="leading" id="Csc-0K-rX7"/>
+                            <constraint firstItem="3EC-9c-4sI" firstAttribute="trailing" secondItem="cEH-iJ-HeP" secondAttribute="trailing" constant="4" id="F1e-co-hW8"/>
                             <constraint firstItem="R9h-ex-1Jl" firstAttribute="leading" secondItem="3EC-9c-4sI" secondAttribute="leading" constant="4" id="KPH-GP-hBU"/>
                             <constraint firstItem="lhF-kh-BIm" firstAttribute="leading" secondItem="3EC-9c-4sI" secondAttribute="leading" constant="8" id="Nvv-3Y-TaG"/>
+                            <constraint firstItem="cEH-iJ-HeP" firstAttribute="leading" secondItem="3EC-9c-4sI" secondAttribute="leading" constant="4" id="P5G-BZ-Ace"/>
                             <constraint firstItem="lhF-kh-BIm" firstAttribute="trailing" secondItem="3EC-9c-4sI" secondAttribute="trailing" constant="8" id="cEi-BN-Thr"/>
                             <constraint firstItem="3EC-9c-4sI" firstAttribute="trailing" secondItem="OUV-8b-uvB" secondAttribute="trailing" constant="4" id="eqW-CQ-Fnt"/>
                             <constraint firstItem="lhF-kh-BIm" firstAttribute="top" secondItem="OUV-8b-uvB" secondAttribute="bottom" constant="4" id="hw3-td-6Q2"/>
                             <constraint firstItem="3EC-9c-4sI" firstAttribute="trailing" secondItem="R9h-ex-1Jl" secondAttribute="trailing" constant="4" id="nsd-Hh-P0B"/>
+                            <constraint firstItem="cEH-iJ-HeP" firstAttribute="top" secondItem="lhF-kh-BIm" secondAttribute="bottom" constant="8" id="poB-Zy-wkh"/>
                             <constraint firstItem="OUV-8b-uvB" firstAttribute="top" secondItem="R9h-ex-1Jl" secondAttribute="bottom" constant="4" id="vWT-JC-3Qi"/>
                             <constraint firstItem="R9h-ex-1Jl" firstAttribute="top" secondItem="bTX-wT-geG" secondAttribute="bottom" constant="12" id="zjj-bO-nVD"/>
                         </constraints>
@@ -183,12 +194,14 @@
                         <outlet property="descriptionLabel" destination="lhF-kh-BIm" id="LWw-lU-A2m"/>
                         <outlet property="numVotesLabel" destination="5bO-cp-gb1" id="k6b-Ix-DuZ"/>
                         <outlet property="popularityLabel" destination="90W-b3-4ML" id="na9-8G-cgn"/>
+                        <outlet property="seeSimilarMoviesButton" destination="cEH-iJ-HeP" id="luY-fJ-5Qh"/>
                         <outlet property="titleLabel" destination="R9h-ex-1Jl" id="ijj-M5-nNt"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="ShowSimilarMoviesSegue" id="exl-1e-N6X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RmR-xc-Z56" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2898.4615384615386" y="-29.14691943127962"/>
+            <point key="canvasLocation" x="3211" y="-28"/>
         </scene>
         <!--Now Playing-->
         <scene sceneID="Xpd-t5-THs">
@@ -316,6 +329,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="KQo-oh-7yl"/>
+        <segue reference="exl-1e-N6X"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

@@ -15,16 +15,16 @@ struct Movie: Codable {
   let id: Int
   let title: String
   let overview: String
-  let posterPath: String
-  let backdropPath: String
+  let posterPath: String?
+  let backdropPath: String?
   let voteAverage: Double
   let voteCount: Int
   let popularity: Double
-  var posterURL: URL {
-    return URL(string: "https://image.tmdb.org/t/p/w185/\(posterPath)")!
+  var posterURL: URL? {
+    return URL(string: "https://image.tmdb.org/t/p/w185/\(posterPath ?? "")")
   }
-  var backdropURL: URL {
-    return URL(string: "https://image.tmdb.org/t/p/w1280\(backdropPath)")!
+  var backdropURL: URL? {
+    return URL(string: "https://image.tmdb.org/t/p/w1280\(backdropPath ?? "")")
   }
   enum CodingKeys: String, CodingKey {
     case id

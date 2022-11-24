@@ -16,9 +16,11 @@ class PosterCollectionViewCell: UICollectionViewCell {
   private var imageRequest: DataRequest?
   
   func configure(with movie: Movie) {
-    AF.request(movie.posterURL).responseImage { [unowned self] response in
-      if case .success(let image) = response.result {
-        posterImageView.image = image
+    if let posterURL = movie.posterURL {
+      AF.request(posterURL).responseImage { [unowned self] response in
+        if case .success(let image) = response.result {
+          posterImageView.image = image
+        }
       }
     }
   }
