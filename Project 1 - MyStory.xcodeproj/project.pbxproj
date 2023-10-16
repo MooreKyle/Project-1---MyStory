@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F520ADC2ADD8B65009E1981 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F520ADB2ADD8B65009E1981 /* InfoViewController.swift */; };
 		3F6CF2D82AD4F0CF00F37F2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6CF2D72AD4F0CF00F37F2A /* AppDelegate.swift */; };
 		3F6CF2DA2AD4F0CF00F37F2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6CF2D92AD4F0CF00F37F2A /* SceneDelegate.swift */; };
 		3F6CF2DC2AD4F0CF00F37F2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6CF2DB2AD4F0CF00F37F2A /* ViewController.swift */; };
@@ -40,7 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3F6CF2D42AD4F0CF00F37F2A /* Project 1: MyStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project 1: MyStory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F520ADB2ADD8B65009E1981 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		3F6CF2D42AD4F0CF00F37F2A /* Project 1 - MyStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project 1 - MyStory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F6CF2D72AD4F0CF00F37F2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F6CF2D92AD4F0CF00F37F2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3F6CF2DB2AD4F0CF00F37F2A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,9 +50,9 @@
 		3F6CF2E02AD4F0D000F37F2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F6CF2E32AD4F0D000F37F2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F6CF2E52AD4F0D000F37F2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F6CF2EA2AD4F0D000F37F2A /* Project 1: MyStoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project 1: MyStoryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F6CF2EA2AD4F0D000F37F2A /* Project 1 - MyStoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project 1 - MyStoryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F6CF2EE2AD4F0D000F37F2A /* Project_1__MyStoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_1__MyStoryTests.swift; sourceTree = "<group>"; };
-		3F6CF2F42AD4F0D000F37F2A /* Project 1: MyStoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project 1: MyStoryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F6CF2F42AD4F0D000F37F2A /* Project 1 - MyStoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project 1 - MyStoryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F6CF2F82AD4F0D000F37F2A /* Project_1__MyStoryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_1__MyStoryUITests.swift; sourceTree = "<group>"; };
 		3F6CF2FA2AD4F0D000F37F2A /* Project_1__MyStoryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_1__MyStoryUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3F701F052AD64677005CC72F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -96,9 +98,9 @@
 		3F6CF2D52AD4F0CF00F37F2A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3F6CF2D42AD4F0CF00F37F2A /* Project 1: MyStory.app */,
-				3F6CF2EA2AD4F0D000F37F2A /* Project 1: MyStoryTests.xctest */,
-				3F6CF2F42AD4F0D000F37F2A /* Project 1: MyStoryUITests.xctest */,
+				3F6CF2D42AD4F0CF00F37F2A /* Project 1 - MyStory.app */,
+				3F6CF2EA2AD4F0D000F37F2A /* Project 1 - MyStoryTests.xctest */,
+				3F6CF2F42AD4F0D000F37F2A /* Project 1 - MyStoryUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,6 +112,7 @@
 				3F6CF2D92AD4F0CF00F37F2A /* SceneDelegate.swift */,
 				3F6CF2DB2AD4F0CF00F37F2A /* ViewController.swift */,
 				3F6CF2DD2AD4F0CF00F37F2A /* Main.storyboard */,
+				3F520ADB2ADD8B65009E1981 /* InfoViewController.swift */,
 				3FC33EC02ADC93E900866B91 /* DetailViewController.swift */,
 				3F6CF2E02AD4F0D000F37F2A /* Assets.xcassets */,
 				3F6CF2E22AD4F0D000F37F2A /* LaunchScreen.storyboard */,
@@ -138,9 +141,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3F6CF2D32AD4F0CF00F37F2A /* Project 1: MyStory */ = {
+		3F6CF2D32AD4F0CF00F37F2A /* Project 1 - MyStory */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F6CF2FE2AD4F0D000F37F2A /* Build configuration list for PBXNativeTarget "Project 1: MyStory" */;
+			buildConfigurationList = 3F6CF2FE2AD4F0D000F37F2A /* Build configuration list for PBXNativeTarget "Project 1 - MyStory" */;
 			buildPhases = (
 				3F6CF2D02AD4F0CF00F37F2A /* Sources */,
 				3F6CF2D12AD4F0CF00F37F2A /* Frameworks */,
@@ -150,14 +153,14 @@
 			);
 			dependencies = (
 			);
-			name = "Project 1: MyStory";
+			name = "Project 1 - MyStory";
 			productName = "Project 1: MyStory";
-			productReference = 3F6CF2D42AD4F0CF00F37F2A /* Project 1: MyStory.app */;
+			productReference = 3F6CF2D42AD4F0CF00F37F2A /* Project 1 - MyStory.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3F6CF2E92AD4F0D000F37F2A /* Project 1: MyStoryTests */ = {
+		3F6CF2E92AD4F0D000F37F2A /* Project 1 - MyStoryTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F6CF3012AD4F0D000F37F2A /* Build configuration list for PBXNativeTarget "Project 1: MyStoryTests" */;
+			buildConfigurationList = 3F6CF3012AD4F0D000F37F2A /* Build configuration list for PBXNativeTarget "Project 1 - MyStoryTests" */;
 			buildPhases = (
 				3F6CF2E62AD4F0D000F37F2A /* Sources */,
 				3F6CF2E72AD4F0D000F37F2A /* Frameworks */,
@@ -168,14 +171,14 @@
 			dependencies = (
 				3F6CF2EC2AD4F0D000F37F2A /* PBXTargetDependency */,
 			);
-			name = "Project 1: MyStoryTests";
+			name = "Project 1 - MyStoryTests";
 			productName = "Project 1: MyStoryTests";
-			productReference = 3F6CF2EA2AD4F0D000F37F2A /* Project 1: MyStoryTests.xctest */;
+			productReference = 3F6CF2EA2AD4F0D000F37F2A /* Project 1 - MyStoryTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		3F6CF2F32AD4F0D000F37F2A /* Project 1: MyStoryUITests */ = {
+		3F6CF2F32AD4F0D000F37F2A /* Project 1 - MyStoryUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F6CF3042AD4F0D000F37F2A /* Build configuration list for PBXNativeTarget "Project 1: MyStoryUITests" */;
+			buildConfigurationList = 3F6CF3042AD4F0D000F37F2A /* Build configuration list for PBXNativeTarget "Project 1 - MyStoryUITests" */;
 			buildPhases = (
 				3F6CF2F02AD4F0D000F37F2A /* Sources */,
 				3F6CF2F12AD4F0D000F37F2A /* Frameworks */,
@@ -186,9 +189,9 @@
 			dependencies = (
 				3F6CF2F62AD4F0D000F37F2A /* PBXTargetDependency */,
 			);
-			name = "Project 1: MyStoryUITests";
+			name = "Project 1 - MyStoryUITests";
 			productName = "Project 1: MyStoryUITests";
-			productReference = 3F6CF2F42AD4F0D000F37F2A /* Project 1: MyStoryUITests.xctest */;
+			productReference = 3F6CF2F42AD4F0D000F37F2A /* Project 1 - MyStoryUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -214,7 +217,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3F6CF2CF2AD4F0CF00F37F2A /* Build configuration list for PBXProject "Project 1: MyStory" */;
+			buildConfigurationList = 3F6CF2CF2AD4F0CF00F37F2A /* Build configuration list for PBXProject "Project 1 - MyStory" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -227,9 +230,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3F6CF2D32AD4F0CF00F37F2A /* Project 1: MyStory */,
-				3F6CF2E92AD4F0D000F37F2A /* Project 1: MyStoryTests */,
-				3F6CF2F32AD4F0D000F37F2A /* Project 1: MyStoryUITests */,
+				3F6CF2D32AD4F0CF00F37F2A /* Project 1 - MyStory */,
+				3F6CF2E92AD4F0D000F37F2A /* Project 1 - MyStoryTests */,
+				3F6CF2F32AD4F0D000F37F2A /* Project 1 - MyStoryUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -273,6 +276,7 @@
 				3F6CF2D82AD4F0CF00F37F2A /* AppDelegate.swift in Sources */,
 				3F6CF2DA2AD4F0CF00F37F2A /* SceneDelegate.swift in Sources */,
 				3FC33EC12ADC93E900866B91 /* DetailViewController.swift in Sources */,
+				3F520ADC2ADD8B65009E1981 /* InfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,12 +302,12 @@
 /* Begin PBXTargetDependency section */
 		3F6CF2EC2AD4F0D000F37F2A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3F6CF2D32AD4F0CF00F37F2A /* Project 1: MyStory */;
+			target = 3F6CF2D32AD4F0CF00F37F2A /* Project 1 - MyStory */;
 			targetProxy = 3F6CF2EB2AD4F0D000F37F2A /* PBXContainerItemProxy */;
 		};
 		3F6CF2F62AD4F0D000F37F2A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3F6CF2D32AD4F0CF00F37F2A /* Project 1: MyStory */;
+			target = 3F6CF2D32AD4F0CF00F37F2A /* Project 1 - MyStory */;
 			targetProxy = 3F6CF2F52AD4F0D000F37F2A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -519,7 +523,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Project 1: MyStory.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Project 1: MyStory";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Project 1 - MyStory.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Project 1 - MyStory";
 			};
 			name = Debug;
 		};
@@ -539,7 +543,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Project 1: MyStory.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Project 1: MyStory";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Project 1 - MyStory.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Project 1 - MyStory";
 			};
 			name = Release;
 		};
@@ -582,7 +586,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3F6CF2CF2AD4F0CF00F37F2A /* Build configuration list for PBXProject "Project 1: MyStory" */ = {
+		3F6CF2CF2AD4F0CF00F37F2A /* Build configuration list for PBXProject "Project 1 - MyStory" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F6CF2FC2AD4F0D000F37F2A /* Debug */,
@@ -591,7 +595,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3F6CF2FE2AD4F0D000F37F2A /* Build configuration list for PBXNativeTarget "Project 1: MyStory" */ = {
+		3F6CF2FE2AD4F0D000F37F2A /* Build configuration list for PBXNativeTarget "Project 1 - MyStory" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F6CF2FF2AD4F0D000F37F2A /* Debug */,
@@ -600,7 +604,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3F6CF3012AD4F0D000F37F2A /* Build configuration list for PBXNativeTarget "Project 1: MyStoryTests" */ = {
+		3F6CF3012AD4F0D000F37F2A /* Build configuration list for PBXNativeTarget "Project 1 - MyStoryTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F6CF3022AD4F0D000F37F2A /* Debug */,
@@ -609,7 +613,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3F6CF3042AD4F0D000F37F2A /* Build configuration list for PBXNativeTarget "Project 1: MyStoryUITests" */ = {
+		3F6CF3042AD4F0D000F37F2A /* Build configuration list for PBXNativeTarget "Project 1 - MyStoryUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F6CF3052AD4F0D000F37F2A /* Debug */,

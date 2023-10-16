@@ -1,15 +1,13 @@
 //
-//  DetailViewController.swift
+//  InfoViewController.swift
 //  Project 1: MyStory
 //
-//  Created by student on 10/15/23.
+//  Created by student on 10/16/23.
 //
 
 import UIKit
 
-class DetailViewController: UIViewController {
-    
-    
+class InfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

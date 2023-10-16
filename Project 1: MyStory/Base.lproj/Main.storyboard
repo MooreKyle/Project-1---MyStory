@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Project_1__MyStory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Project_1___MyStory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,24 +32,40 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="About Me"/>
+                                <connections>
+                                    <action selector="buttonTapped1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l7L-97-pCq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kF-5f-UIK">
                                 <rect key="frame" x="76" y="396" width="240" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="My Weaknesses"/>
+                                <connections>
+                                    <action selector="buttonTapped2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c2v-O5-7C9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kb-xE-J1h">
                                 <rect key="frame" x="76" y="471" width="240" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="My Special Abilities"/>
+                                <connections>
+                                    <action selector="buttonTapped3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EUF-jw-Xp3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="JPo-8j-zu3"/>
+                    <connections>
+                        <outlet property="button1" destination="3PS-Dt-Pnz" id="J4B-om-j8D"/>
+                        <outlet property="button2" destination="4kF-5f-UIK" id="6P4-ln-I5c"/>
+                        <outlet property="button3" destination="9kb-xE-J1h" id="oD6-by-HRa"/>
+                        <outlet property="profilePhotoView" destination="zRy-kh-ofk" id="nFL-9q-3uN"/>
+                        <segue destination="u5J-zv-23j" kind="show" identifier="MainSegue" id="frp-94-vlJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -58,17 +74,24 @@
         <!--Detail View Controller-->
         <scene sceneID="Hhh-4K-MQB">
             <objects>
-                <viewController id="u5J-zv-23j" customClass="DetailViewController" customModule="Project_1__MyStory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="u5J-zv-23j" customClass="DetailViewController" customModule="Project_1___MyStory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uIC-x1-hld">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QsK-wV-Xy3">
+                                <rect key="frame" x="53" y="147" width="287" height="148"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="2Fb-dg-Sg3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="IZf-kx-vL7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hL6-fz-pcA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1789" y="-35"/>
+            <point key="canvasLocation" x="1788.5496183206105" y="-35.211267605633807"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="65p-tF-5bb">
