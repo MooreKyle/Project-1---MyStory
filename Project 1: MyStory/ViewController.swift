@@ -30,33 +30,5 @@ class ViewController: UIViewController {
     }
     
     
-    
-//  error reading dependency file '/Users/student/Library/Developer/Xcode/DerivedData/Project_1:_MyStory-ftnoorgoijhnopdkflyilwrzhlbj/Build/Intermediates.noindex/Project 1: MyStory.build/Debug-iphonesimulator/Project 1: MyStory.build/Objects-normal/arm64/Project 1: MyStory-master-emit-module.d': unexpected character in prerequisites
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let identifier = segue.identifier {
-//            switch identifier {
-//            case "SegueToDetail1":
-//                // Optional: Pass data to DetailViewController1 if needed
-//                break
-//            case "SegueToDetail2":
-//                // Optional: Pass data to DetailViewController2 if needed
-//                break
-//            case "SegueToDetail3":
-//                // Optional: Pass data to DetailViewController3 if needed
-//                break
-//            default:
-//                break
-//            }
-//        }
-//    }
+
 }
