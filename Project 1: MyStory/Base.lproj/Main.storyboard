@@ -28,37 +28,43 @@
                                 <rect key="frame" x="76" y="140" width="240" height="177"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3PS-Dt-Pnz">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3PS-Dt-Pnz">
                                 <rect key="frame" x="76" y="325" width="240" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.33313869201030932" green="0.14356105362375468" blue="0.15377869185572868" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <gestureRecognizers/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="About Me"/>
                                 <connections>
                                     <action selector="buttonTapped1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l7L-97-pCq"/>
+                                    <outletCollection property="gestureRecognizers" destination="WJG-gg-Ly2" appends="YES" id="dAg-2Z-Pzf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kF-5f-UIK">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kF-5f-UIK">
                                 <rect key="frame" x="76" y="396" width="240" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.33313869200000001" green="0.14356105359999999" blue="0.15377869189999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <gestureRecognizers/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="My Weaknesses"/>
                                 <connections>
                                     <action selector="buttonTapped2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c2v-O5-7C9"/>
+                                    <outletCollection property="gestureRecognizers" destination="f60-wc-gJ9" appends="YES" id="ErX-Oo-CzE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kb-xE-J1h">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kb-xE-J1h">
                                 <rect key="frame" x="76" y="471" width="240" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.33313869200000001" green="0.14561333060000001" blue="0.14809875419999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <gestureRecognizers/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="My Special Abilities"/>
                                 <connections>
                                     <action selector="buttonTapped3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EUF-jw-Xp3"/>
+                                    <outletCollection property="gestureRecognizers" destination="OyF-aE-TNG" appends="YES" id="rLd-QI-iJv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -76,6 +82,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="WJG-gg-Ly2"/>
+                <tapGestureRecognizer id="f60-wc-gJ9"/>
+                <tapGestureRecognizer id="OyF-aE-TNG"/>
             </objects>
             <point key="canvasLocation" x="1046.5648854961833" y="-34.507042253521128"/>
         </scene>
