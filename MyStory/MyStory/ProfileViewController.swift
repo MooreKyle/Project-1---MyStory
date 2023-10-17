@@ -41,9 +41,8 @@ class ProfileViewController: UIViewController {
     performSegue(withIdentifier: kSegueIdentifier, sender: nil)
   }
   
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    let viewController = segue.destination as! ContextItemViewController
-    viewController.contextItem = selectedContextItem!
+//  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//    let viewController = segue.destination as! ContextItemViewController
+//    viewController.contextItem = selectedContextItem!
   }
-}
 
