@@ -26,6 +26,8 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uka-eJ-EIy">
                                 <rect key="frame" x="16" y="307" width="358" height="35"/>
+                                <color key="backgroundColor" red="0.680432506443299" green="0.15246485532370918" blue="0.14458978614226609" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Context Item 1"/>
                                 <connections>
@@ -34,6 +36,8 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLn-2n-jZU">
                                 <rect key="frame" x="16" y="346" width="358" height="35"/>
+                                <color key="backgroundColor" red="0.68043250639999997" green="0.15246485530000001" blue="0.14458978610000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Context Item 2"/>
                                 <connections>
@@ -42,6 +46,8 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qdc-al-NOZ">
                                 <rect key="frame" x="16" y="385" width="358" height="35"/>
+                                <color key="backgroundColor" red="0.68043250639999997" green="0.15246485530000001" blue="0.14458978610000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Context Item 3"/>
                                 <connections>
@@ -50,7 +56,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qdc-al-NOZ" secondAttribute="trailing" constant="16" id="0ml-LQ-9hY"/>
                             <constraint firstItem="uka-eJ-EIy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="C5D-20-jkZ"/>
@@ -142,9 +148,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="spiderman" width="1080" height="1080"/>
+        <image name="spiderman" width="3840" height="2160"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
