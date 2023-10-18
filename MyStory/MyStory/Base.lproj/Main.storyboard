@@ -108,7 +108,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BlV-a1-NSu"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemGray2Color"/>
                         <constraints>
                             <constraint firstItem="BlV-a1-NSu" firstAttribute="trailing" secondItem="GNI-PA-16O" secondAttribute="trailing" constant="50" id="29m-U7-gDA"/>
                             <constraint firstItem="SbR-Kg-UeN" firstAttribute="leading" secondItem="BlV-a1-NSu" secondAttribute="leading" constant="25" id="4kz-DL-UqJ"/>
@@ -149,6 +149,9 @@
     </scenes>
     <resources>
         <image name="spiderman" width="3840" height="2160"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
