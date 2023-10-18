@@ -19,9 +19,14 @@ class ContextItemViewController: UIViewController {
     configure(with: contextItem)
   }
   
-  private func configure(with contextItem: ContextItem) {
-    navigationItem.title = contextItem.title
-    imageView.image = contextItem.image
-    descriptionLabel.text = contextItem.description
+  private func configure(with contextItem: ContextItem?) {
+      if let contextItem = contextItem {
+          navigationItem.title = contextItem.title
+          imageView.image = contextItem.image
+          descriptionLabel.text = contextItem.description
+      }
+      else {
+          print ("nil")
+      }
   }
 }
